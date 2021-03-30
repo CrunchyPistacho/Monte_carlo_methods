@@ -22,17 +22,17 @@ class Pi_estimator:
             pi[i] = self.buffon_needle_pi()
         return pi
 
+
 def plot_histogram(x):
     n, bins, patches = plt.hist(x=x, bins='auto',
                                 alpha=0.7, rwidth=0.85)
     plt.xlabel('Pi Value')
     plt.ylabel('Frequency')
     plt.title('Buffon Needle Histogram')
-    plt.text(23, 45, r'$\mu=15, b=3$')
     maxfreq = n.max()
     # Set a clean upper y-axis limit.
     plt.ylim(ymax=np.ceil(maxfreq / 10) * 10 if maxfreq %
-                10 else maxfreq + 10)
+             10 else maxfreq + 10)
     plt.show()
 
 
