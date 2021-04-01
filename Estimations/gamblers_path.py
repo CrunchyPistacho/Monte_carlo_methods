@@ -44,7 +44,7 @@ def plot_games(x):
 
 def plot_histogram(x):
     n, bins, patches = plt.hist(x=x, bins='auto',
-                                alpha=0.7, rwidth=0.85)
+                                alpha=0.7)
     plt.xlabel('number of plays')
     plt.ylabel('Frequency')
     plt.title('Histogram for number of plays before bankrupt')
@@ -57,7 +57,6 @@ def plot_histogram(x):
 
 if __name__ == "__main__":
     casino = Gambler_path(50, 2000, 1, 100000, 100)
-    casino.play()
     results, end = casino.multiple_plays()
     plot_games(results)
     plot_histogram(end)
