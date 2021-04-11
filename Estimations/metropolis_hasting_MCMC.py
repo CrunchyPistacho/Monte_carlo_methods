@@ -33,13 +33,16 @@ class MCMC_metropolis:
         pts = np.array(pts)
         return pts
 
+
 def plot_simulation(array, bins):
-    fig, axs = plt.subplots(1,2, gridspec_kw={'width_ratios': [1, 5], 'wspace': 0.1})
+    fig, axs = plt.subplots(
+        1, 2, gridspec_kw={'width_ratios': [1, 5], 'wspace': 0.1})
     axs[0].hist(array, bins=bins, orientation='horizontal')
     axs[1].plot(array)
     plt.show()
 
+
 if __name__ == "__main__":
     metro = MCMC_metropolis(N=100000)
     simulation = metro.metropolis()
-    plot_simulation(simulation, bins = 100)
+    plot_simulation(simulation, bins=100)
